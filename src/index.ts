@@ -12,7 +12,11 @@ const { app, getWss } = expressWs(express());
 const port = process.env.PORT || 3000;
 app.set("port", port);
 
-app.use(express.static('public'));
+app.use(express.static('public', {
+    setHeaders: function (res, path) {
+        res.set("Lesocki-Port", `${port}`);
+    }
+}));
 
 const gameState: GameState = {
     status: 'GATHERING',
