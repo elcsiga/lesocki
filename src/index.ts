@@ -8,10 +8,9 @@ import { v4 as uuid } from 'uuid';
 import { ApplyCommand, Command, ConnectCommand, GameReport, GameState } from '../ui/src/shared/types';
 import { gameConfig } from '../ui/src/shared/config';
 
-const port = 3000;
-
-
 const { app, getWss } = expressWs(express());
+const port = process.env.PORT || 3000;
+app.set("port", port);
 
 app.use(express.static('public'));
 
