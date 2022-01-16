@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "tsc",
     "start": "node dist/src/index.js",
-    "dev": "tsc && npm start",
+    "dev": "npm run ui && tsc && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ui:install": "cd ui && npm install",
     "ui:clean": "rimraf public",
