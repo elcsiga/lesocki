@@ -4,14 +4,14 @@
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
-    "postinstall": "npm run ui && tsc",
+    "postinstall": "tsc",
     "start": "node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ui:install": "cd ui",
+    "ui:install": "cd ui && npm install",
     "ui:clean": "rimraf public",
-    "ui:build": "cd ui && npm install && npm run build",
+    "ui:build": "cd ui && npm run build",
     "ui:copy": "copyfiles -u 2 \"ui/public/**/*.*\" public",
-    "ui": "npm run ui:install && npm run ui:clean && npm run ui:build && npm run ui:copy"
+    "ui": "npm run ui:clean && npm run ui:build && npm run ui:copy"
   },
   "repository": {
     "type": "git",
