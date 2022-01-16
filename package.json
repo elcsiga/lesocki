@@ -4,21 +4,20 @@
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
-    "tsc": "tsc",
-    "postinstall": "npm run ui:install && npm run tsc",
+    "postinstall": "npm run ui && tsc",
     "start": "node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ui:install": "cd ui && npm install",
     "ui:clean": "rimraf public",
     "ui:build": "cd ui && npm run build",
     "ui:copy": "copyfiles -u 2 \"ui/public/**/*.*\" public",
-    "ui": "npm run ui:clean && npm run ui:build && npm run ui:copy"
+    "ui": "npm run ui:install && npm run ui:clean && npm run ui:build && npm run ui:copy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elcsiga/lesocki.git"
   },
-  "author": "",
+  "author": "wooliztooliz & elcsiga",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/elcsiga/lesocki/issues"
@@ -27,7 +26,8 @@
   "dependencies": {
     "express": "^4.17.2",
     "express-ws": "^5.0.2",
-    "ws": "^8.4.0"
+    "ws": "^8.4.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
@@ -37,6 +37,5 @@
     "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4",
-    "uuid": "^8.3.2"
   }
 }
