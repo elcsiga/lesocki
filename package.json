@@ -2,11 +2,11 @@
   "name": "lesocki",
   "version": "1.0.0",
   "description": "",
-  "main": "server/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "postinstall": "npm run ui:install",
-    "prestart": "npm run ui && npm run build",
+    "prestart": "npm run build",
     "start": "node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ui:install": "cd ui && npm install",
