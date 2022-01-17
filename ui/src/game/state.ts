@@ -13,8 +13,8 @@ export function send<T>(data: T) {
 }
 
 export const gameReport = readable<GameReport>(null, (set) => {
-    const port = window.location.port;
-    socket = new WebSocket(`ws://${window.location.host}/ws`);
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     socket.addEventListener('message', (event) => {
         const report = JSON.parse(event.data) as GameReport;
         console.log('Report: ', report);

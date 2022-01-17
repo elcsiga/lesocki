@@ -14,6 +14,7 @@
     "ui:copy": "copyfiles -u 2 \"ui/public/**/*.*\" public",
     "ui": "npm run ui:clean && npm run ui:build && npm run ui:copy"
   },
+  "pre-commit": ["ui"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elcsiga/lesocki.git"
@@ -36,6 +37,7 @@
     "@types/uuid": "^8.3.4",
     "@types/ws": "^8.2.2",
     "copyfiles": "^2.4.1",
+    "pre-commit": "^1.2.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4"
   }
