@@ -8,6 +8,7 @@
   import { gameConfig } from "../shared/config";
   import IoIosAddCircle from "svelte-icons/io/IoIosAddCircle.svelte";
   import Pawn from "../compnents/Pawn.svelte";
+  import QrCode from "../compnents/QrCode.svelte";
   import { gameReport, send, me } from "../game/state";
   const { min, max } = gameConfig.numOfPlayers;
 
@@ -66,9 +67,7 @@
 <section>
   {#if $gameReport.players.length >= min && $gameReport.players.length <= max}
     {#if $gameReport.players.every((player) => player.connected)}
-      <p>
-        Itt van mindenki?
-      </p>
+      <p>Itt van mindenki?</p>
       <p>
         <button on:click={start}> Kezdjük! </button>
       </p>
@@ -87,11 +86,15 @@
   {/if}
 </section>
 
-<div>
+<section>
   {#if $me}
     <button class="link" on:click={quit}> Mégsem játszom</button>
   {/if}
-</div>
+</section>
+
+<section class="qr">
+  <QrCode text="{window.location.href}"/>
+</section>
 
 <style>
   .list {
