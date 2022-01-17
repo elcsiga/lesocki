@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300&family=Shojumaru&display=swap');
+
 html, body {
 	position: relative;
 	width: 100%;
@@ -16,7 +18,11 @@ body {
 	user-select: none;
 
 	color: #333;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'BenchNine', sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: 'Shojumaru', cursive;
 }
 
 div {

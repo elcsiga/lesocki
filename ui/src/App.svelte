@@ -2,6 +2,7 @@
   import { gameReport } from "./game/state";
   import Game from "./views/Game.svelte";
   import Gathering from "./views/gathering.svelte";
+  import { Moon } from "svelte-loading-spinners";
 </script>
 
 <main>
@@ -12,7 +13,7 @@
     {:else if $gameReport && $gameReport.status === "GAME"}
       <Game />
     {:else}
-      Nem sikerült csatlakozni a szerverhez!
+      <Moon size="60" color="#FF3E00" unit="px" duration="1s" />
     {/if}
   </div>
   <div class="footer">
